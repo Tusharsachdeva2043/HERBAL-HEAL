@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal-Heal | Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Herbal<span>Heal</span></div>
+            <ul class="nav-links">
+                <li><a href="../Home Page/home.html">Home</a></li>
+                <li><a href="../Buy Medicine page/buymedicine.html" class="active">Buy Medicines</a></li>
+                <li><a href="../Prescription Upload page/PrescriptionUpload.html">Health Records</a></li>
+                <li><a href="../About Us page/Aboutus.html">About Us</a></li>
+                <li><a href="../Contact Us page/ContactUs.html">Contact</a></li>
+                <!-- <li><a href="../Cart page/Cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li> -->
+            </ul>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>We're here to help with all your herbal health needs. Feel free to reach out to us through any of the methods below.</p>
+        
+        <div class="contact-section">
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>📍 Our Location</h3>
+                    <p>Herbal Heal</p>
+                    <p>Hamirpur District</p>
+                    <p>Himachal Pradesh, India</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>📞 Phone & Email</h3>
+                    <p>Customer Service: 91-9816067166</p>
+                    <p>Prescription Line: 91-800-RX-HERBS</p>
+                    <p>Email: adityachabba@gmail.com</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>⏰ Business Hours</h3>
+                    <ul class="hours-list">
+                        <li><span>Monday - Friday</span><span>9:00 AM - 8:00 PM</span></li>
+                        <li><span>Saturday</span><span>10:00 AM - 6:00 PM</span></li>
+                        <li><span>Sunday</span><span>10:00 AM - 4:00 PM</span></li>
+                    </ul>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">t</a>
+                    <a href="#" title="Instagram">i</a>
+                    <a href="#" title="LinkedIn">in</a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>Send us a Message</h2>
+                
+                <div id="form-message" class="success-message">
+                    Your email client will open to send your message. Thank you for contacting us!
+                </div>
+                
+                <form id="contact-form" onsubmit="return sendEmail()">
+                    <div class="form-group">
+                        <label for="name">Your Name*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject*</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Product Information">Product Information</option>
+                            <option value="Prescription Query">Prescription Query</option>
+                            <option value="Order Status">Order Status</option>
+                            <option value="Feedback">Feedback</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message*</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="map-section">
+            <h2>Find Us</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.2486581600815!2d-74.0060!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjEiTiA3NMKwMDAnMjEuNiJX!5e0!3m2!1sen!2sus!4v1619550000000!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Herbal-Heal Pharmacy. All rights reserved.</p>
+        <p>For emergency services, please call our hotline: 1-800-HERBHEAL</p>
+    </footer>
+    
+    <script>
+        function sendEmail() {
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Create email body with formatting
+            const body = `
+Name: ${name}
+Email: ${email}
+Phone: ${phone || 'Not provided'}
+Subject: ${subject}
+
+Message:
+${message}
+            `;
+            
+            // Replace with your actual email address
+            const mailToLink = `mailto:adityachabba02@gmail.com?subject=Herbal-Heal Contact: ${subject}&body=${encodeURIComponent(body)}`;
+            
+            // Show confirmation message
+            document.getElementById('form-message').style.display = 'block';
+            
+            // Open mail client
+            window.location.href = mailToLink;
+            
+            // Reset form after a brief delay
+            setTimeout(() => {
+                document.getElementById('contact-form').reset();
+                setTimeout(() => {
+                    document.getElementById('form-message').style.display = 'none';
+                }, 3000);
+            }, 1000);
+            
+            // Prevent form from submitting normally
+            return false;
+        }
+    </script>
+</body>
+</html>
