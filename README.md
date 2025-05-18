@@ -48,7 +48,7 @@ Directly download the code from git hub.
 
 or
 
-Use " git clone " and paste repo link :- https://github.com/Aditya-Chabba/Online-Pharmacy.git
+Use " git clone " and paste repo link :- https://github.com/Tusharsachdeva2043/HERBAL-HEAL.git
 
 
 ## Credentials
